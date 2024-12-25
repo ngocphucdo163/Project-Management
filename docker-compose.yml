@@ -2,15 +2,15 @@ version: '3.8'
 
 services:
   api:
-    container_name: project-management
-    image: project-management:v1
+    container_name: project-management_p
+    image: project-management_p:v1
     build: .
     ports:
       - '3007:3000'
     environment:
       - NODE_ENV=development
-      - PORT=3005
-      - DB_HOST=db
+      - PORT=3000
+      - DB_HOST=db_p
       - DB_PORT=5432
       - DB_USERNAME=postgres
       - DB_PASSWORD=Abcd1234!
@@ -18,16 +18,16 @@ services:
       - JWT_SECRET=238bb80d-a201-49ca-97c8-bf3e1cb84fca
       - JWT_EXPIRATION=1d
     depends_on:
-      - db
+      - db_p
     networks:
-      - user_network
+      - user_network_p
     volumes:
       - ./config:/app/config
     command: yarn start:dev
 
-  db:
+  db_p:
     image: postgres:14.1-alpine
-    container_name: postgres_db
+    container_name: postgres_db_p
     restart: always
     ports:
       - '5437:5432'
@@ -36,13 +36,13 @@ services:
       - POSTGRES_PASSWORD=Abcd1234!
       - POSTGRES_DB=p_collaboration
     volumes:
-      - db:/var/lib/postgresql/data
+      - db_p:/var/lib/postgresql/data
     networks:
-      - user_network
+      - user_network_p
 
 volumes:
-  db:
+  db_p:
 networks:
-  user_network:
-    name: user_network
+  user_network_p:
+    name: user_network_p
     driver: bridge
