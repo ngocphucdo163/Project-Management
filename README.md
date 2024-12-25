@@ -18,7 +18,7 @@ Ensure you have the following tools installed:
 
 Follow these steps to set up and run the server:
 
-### 1. Set Up Environment Variables
+### 1. Set Up Environment Variables (Optional)
 
 Create a `.env` file in the root directory of the project and add the following environment variables:
 
@@ -38,7 +38,7 @@ JWT_EXPIRATION=3600
 Use Docker Compose to build and run the application:
 
 ```
-docker-compose up --build
+docker-compose up --build -d
 ```
 
 This command will:
@@ -51,7 +51,7 @@ This command will:
 To set up the database schema, run the migrations:
 
 ```
-docker-compose exec api npm run typeorm migration:run
+docker compose exec api npm run typeorm migration:run -- -d dist/data-source.js
 ```
 
 ### 4. Seed the Database

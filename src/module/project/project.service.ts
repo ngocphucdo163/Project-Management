@@ -53,7 +53,6 @@ export class ProjectService {
     const isMembersChanged =
       JSON.stringify(projectInfo.members.map((m) => m.id)) !==
       JSON.stringify(updateProjectDto.members.map((m) => m.id));
-    console.log('===isMembersChanged===', isMembersChanged);
     if (
       updateProjectDto.members &&
       updateProjectDto.members.length > 0 &&

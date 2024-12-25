@@ -1,10 +1,9 @@
 import { DataSource } from 'typeorm';
 
-console.log('====process.env.DB_DATABASE======', process.env.DB_DATABASE);
 export const AppDataSource = new DataSource({
   type: 'postgres',
   host: process.env.DB_HOST || 'localhost',
-  port: parseInt(process.env.DB_PORT ?? '5437', 10),
+  port: parseInt(process.env.DB_PORT ?? '5432', 10),
   username: process.env.DB_USERNAME || 'postgres',
   password: process.env.DB_PASSWORD || 'Abcd1234!',
   database: process.env.DB_DATABASE || 'p_collaboration',
