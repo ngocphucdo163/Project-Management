@@ -3,6 +3,9 @@ import { TypeOrmModuleOptions } from '@nestjs/typeorm';
 import * as path from 'path';
 import { Permission } from 'src/module/permission/entities/permission.entity';
 import { Role } from 'src/module/role/entities/role.entity';
+import { User } from 'src/module/user/entities/user.entity';
+import { Project } from 'src/module/project/entities/project.entity';
+import { Task } from 'src/module/task/entities/task.entity';
 const rootDir = path.join(__dirname, '..', '..');
 dotenv.config();
 
@@ -15,6 +18,6 @@ export const ormConfig: TypeOrmModuleOptions = {
   database: process.env.DB_DATABASE,
   synchronize: false,
   autoLoadEntities: false,
-  entities: [Role, Permission],
+  entities: [Role, Permission, User, Project, Task],
   migrations: [rootDir + '/dist/migration/**/*.js'],
 } as any;

@@ -12,6 +12,7 @@ export class PermissionSeeder implements Seeder {
       { name: 'manage_users' },
       { name: 'manage_projects' },
       { name: 'assign_roles' },
+      { name: 'view_projects' },
       { name: 'create_tasks' },
       { name: 'view_tasks' },
       { name: 'assign_tasks' },

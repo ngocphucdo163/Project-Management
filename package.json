@@ -17,7 +17,8 @@
     "migration:up": "npm run build && npm run typeorm migration:run -- -d ./data-source.ts",
     "migration:down": "npm run build && npm run typeorm -- -d ./data-source.ts migration:revert",
     "migration:create": "typeorm-ts-node-commonjs migration:create",
-    "seed": "nest build && node dist/src/database/seeds/seeder"
+    "migration:run": "npm run typeorm migration:run -- -d src/data-source.ts",
+    "seed": "nest build && node dist/database/seeds/seeder"
   },
   "dependencies": {
     "@nestjs/common": "^10.4.15",

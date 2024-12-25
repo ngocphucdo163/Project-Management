@@ -22,14 +22,15 @@ export class RolePermissionSeeder implements Seeder {
       'manage_projects',
       'create_tasks',
       'assign_tasks',
-      'complete_tasks',
+      'update_tasks',
     ];
 
     const contributorPermissionNames = [
       'view_projects',
+      'view_tasks',
       'create_tasks',
       'assign_tasks',
-      'complete_tasks',
+      'update_tasks',
     ];
 
     // From permissions name to permissions
