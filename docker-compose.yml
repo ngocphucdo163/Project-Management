@@ -6,10 +6,10 @@ services:
     image: project-management:v1
     build: .
     ports:
-      - '3000:3000'
+      - '3007:3000'
     environment:
       - NODE_ENV=development
-      - PORT=3000
+      - PORT=3005
       - DB_HOST=db
       - DB_PORT=5432
       - DB_USERNAME=postgres
@@ -30,7 +30,7 @@ services:
     container_name: postgres_db
     restart: always
     ports:
-      - '5432:5432'
+      - '5437:5432'
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=Abcd1234!
