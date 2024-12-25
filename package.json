@@ -10,7 +10,7 @@
     "start": "nest start",
     "start:dev": "nest start --watch",
     "start:debug": "nest start --debug --watch",
-    "start:prod": "node dist/src/main",
+    "start:prod": "node dist/main",
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
     "typeorm": "node --require ts-node/register node_modules/typeorm/cli.js",
     "migration:generate": "npm run build && cross-var npm run typeorm -- -d ./data-source.ts migration:generate ./migrations/$npm_config_name",
@@ -41,6 +41,7 @@
     "typeorm": "^0.3.20"
   },
   "devDependencies": {
+    "@nestjs/cli": "^10.4.9",
     "@faker-js/faker": "^9.3.0",
     "@types/bcryptjs": "^2.4.6",
     "@types/node": "^22.10.2",
